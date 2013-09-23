@@ -48,6 +48,7 @@
 #include "nms.hpp"
 #include "Rect3.hpp"
 #include "DistanceTransform.hpp"
+#include <cstdio>
 using namespace cv;
 using namespace std;
 
@@ -92,7 +93,7 @@ int main(int argc, char** argv) {
             exit(-4);
         }
 	if (argc == 4) {
-		depth = imread(argv[3], IMREAD_ANYDEPTH);
+		depth = imread(argv[3], CV_LOAD_IMAGE_ANYDEPTH);
 		// convert the depth image from mm to m
 		depth = depth / 1000.0f;
 	}
