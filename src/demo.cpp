@@ -36,6 +36,8 @@
  *  Created: Jun 27, 2012
  */
 
+#define WITH_MATLABIO
+
 #include <boost/filesystem.hpp>
 #include "PartsBasedDetector.hpp"
 #include "Candidate.hpp"
@@ -105,8 +107,7 @@ int main(int argc, char** argv) {
 
 	// display the best candidates
 	Visualize visualize(model->name());
-	SearchSpacePruning<float> ssp;
-        Mat canvas;
+    Mat canvas;
 	if (candidates.size() > 0) {
 	    Candidate::sort(candidates);
 	    //Candidate::nonMaximaSuppression(im, candidates, 0.2);
