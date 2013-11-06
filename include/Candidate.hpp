@@ -77,7 +77,7 @@ public:
 	//! set the candidate component
 	void setComponent(int c) { component_ = c; }
 	//! get the candidate component
-	int component(void) { return component_; }
+    int component(void) const { return component_; }
 	//! rescale the parts
 	void resize(const float factor) {
 		for (size_t n = 0; n < parts_.size(); ++n) {
@@ -188,7 +188,7 @@ public:
 		// get the median of the points
 		const size_t M = points.rows;
 		const size_t midx = M/2;
-		float median = points[midx][0];
+        // float median = points[midx][0]; // unused variable
 
 		// filter the points
 		cv::Mat_<float> g, dog, dpoints;
