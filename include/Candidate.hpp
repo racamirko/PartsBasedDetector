@@ -66,9 +66,9 @@ public:
 	virtual ~Candidate() {}
 	//! return the vector of parts
 	const std::vector<cv::Rect>& parts(void) const { return parts_; }
-    //! return the vector of parts
-    std::vector<cv::Rect>& parts(void) { return parts_; }
-    //! return the vector of confidence scores
+	//! return the vector of parts
+	std::vector<cv::Rect>& parts(void) { return parts_; }
+	//! return the vector of confidence scores
 	const vectorf& confidence(void) const { return confidence_; }
 	//! add a part score to the candidate, parameterized by a bounding box and confidence value
 	void addPart(cv::Rect r, float confidence) { parts_.push_back(r); confidence_.push_back(confidence); }
@@ -79,7 +79,7 @@ public:
 	//! set the candidate component
 	void setComponent(int c) { component_ = c; }
 	//! get the candidate component
-    int component(void) const { return component_; }
+	int component(void) const { return component_; }
 	//! rescale the parts
 	void resize(const float factor) {
 		for (size_t n = 0; n < parts_.size(); ++n) {

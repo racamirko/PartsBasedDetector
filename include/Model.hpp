@@ -117,7 +117,9 @@ public:
 	int norient(void) const { return norient_; }
 	int ncomponents(void) const { return filterid_.size(); }
 
-	virtual bool serialize(const std::string& filename) const = 0;
+	
+    void setThreshold(float threshold) { thresh_ = threshold; }
+    virtual bool serialize(const std::string& filename) const = 0;
 	virtual bool deserialize(const std::string& filename) = 0;
 };
 
